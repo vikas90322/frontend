@@ -10,7 +10,7 @@ const Editor = ({ setPreview, setLoading }) => {
     setText(newText);
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:5000/convert", { markdown: newText });
+      const { data } = await axios.post("https://back-markdown-editor.vercel.app/convert", { markdown: newText });
       setPreview(data.html);
     } catch (error) {
       console.error("Error converting markdown:", error);
