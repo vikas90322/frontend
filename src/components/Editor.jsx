@@ -9,6 +9,7 @@ const Editor = ({ setPreview, setLoading }) => {
     const newText = e.target.value;
     setText(newText);
     setLoading(true);
+    
     try {
       const { data } = await axios.post("https://back-markdown-editor.vercel.app/convert", { markdown: newText });
       setPreview(data.html);
